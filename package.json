@@ -6,13 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemo app.js"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "Sean R Reid",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
     "express-es6-template-engine": "^2.2.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stoicgit/busted_express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stoicgit/busted_express/issues"
+  },
+  "homepage": "https://github.com/stoicgit/busted_express#readme"
 }

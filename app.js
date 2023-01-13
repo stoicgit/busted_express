@@ -1,25 +1,13 @@
-'use strict';
-
-const hostname = '127.0.0.1';
-const port = 3333;
-
-const express = require('express'),
-    es6Renderer = require('express-es6-template-engine');
-
+const express = require("express");
 const app = express();
+const PORT = 3033;
+app.use(express.static(__dirname + "/public"));
+app.set("view engine", "ejs");
 
-app.engine('html', es6Renderer);
-app.set('views', './views');
-app.set('view engine', 'html');
+app.listen(PORT, console.log(`Listening on port $[{PORT}]`));
 
-const server = http.createServer(app);
+const rootController = require("./routes/index");
+const rangersController = require("./routes/rangers");
 
-server.listen(PORT, HOSTNAME, () => {
-    console.log(`Server running at http://${hostname}:${port}`)
-});
-
-const rootController = require('./routes/index');
-const rangersController = require('./routes/rangers');
-
-
-app.use('/rangers', rangersController);
+app.use("/", rootController);
+app.use("/rangers", rangersController);

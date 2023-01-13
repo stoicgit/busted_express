@@ -1,0 +1,6 @@
+<h1><%= locals.title %></h1>
+<ul>
+  <%= locals.data.map(ranger => `
+  <li><a href="./rangers/${ranger.slug}">${ranger.name}</a></li>
+  `).join('') %>
+</ul>
